@@ -9,6 +9,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>Enter name:</Text>
       <TextInput 
+        multiline
         style={styles.input} 
         placeholder='napr. miko flosso'
         onChangeText = {(val) => setName(val)}/>
