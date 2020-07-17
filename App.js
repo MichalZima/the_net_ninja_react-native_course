@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, FlatList, TouchableOpacity } from 'react-native';
 import Header from "./components/header";
+import TodoItem from "./components/todoItems";
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -8,6 +9,12 @@ export default function App() {
     { text: 'obchod', key: '2' },
     { text: 'obed', key: '3' },
   ]);
+
+  const pressHandler = (key) => {
+    setTodos ((prevTodos) => {
+      return prevTodos.filter(todo => todo.key != key);
+    });
+  }
 
   return (
     <View style={styles.container}>
@@ -18,7 +25,7 @@ export default function App() {
           <FlatList
             data={todos}
             renderItem = {({item}) => (
-              <Text>{item.text}</Text>
+              <TodoItem item={item} pressHandler={pressHandler}/>
             )}
           
           />
@@ -44,7 +51,6 @@ const styles = StyleSheet.create({
     padding: 40, 
   },
   list: {
-    paddingTop: 20,
     marginTop: 30,
   },
 });
