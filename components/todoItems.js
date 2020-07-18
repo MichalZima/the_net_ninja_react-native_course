@@ -1,12 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {MaterialIcons} from '@expo/vector-icons'
 
 export default function TodoItem ({item, pressHandler}) {
     
     return (    
-        <TouchableOpacity onPress={() => pressHandler(item.key)}>
-            <Text style={styles.item}>{item.text}</Text>
-        </TouchableOpacity>
+       
+            <View style={styles.item}>
+                <TouchableOpacity onPress={() => pressHandler(item.key)}>
+                    <MaterialIcons name='delete' size={18} color='#333' />
+                </TouchableOpacity>
+                <Text style={styles.itemText}>{item.text}</Text>
+            </View>
     )
 }
 
@@ -19,7 +24,9 @@ const styles = StyleSheet.create ({
         borderStyle: 'dashed',
         borderWidth: 1,
         borderRadius: 10,
+        flexDirection: 'row',
+    },
+    itemText: {
+        marginLeft: 10,
     }
-
-
 })
