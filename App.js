@@ -26,7 +26,7 @@ export default function App() {
         ];
       });
     }else {
-      Alert.alert ('OOPS', 'SLABE TODO', [
+      Alert.alert ('OOPS', 'kratke todo', [
         {text: 'Understood', onPress: () => console.log ('miko je sefino')}
       ])
     }
@@ -65,9 +65,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
+    flex: 1,
     padding: 40, 
   },
   list: {
+    flex: 1,
     marginTop: 30,
   },
 });
