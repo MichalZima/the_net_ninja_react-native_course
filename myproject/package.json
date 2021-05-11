@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "expo": "~37.0.3",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "logkitty": "^0.7.1",
     "mem": "^6.1.0",
     "package": "^1.0.1",
